@@ -81,5 +81,6 @@ def home():
 # 🔥 Flask 실행 코드
 if __name__ == "__main__":
     import os
-    port = int(os.environ.get("PORT", 5000))  # Railway에서 자동 할당된 포트 사용
+    port = int(os.environ.get("PORT", 5000))  # 기본 포트 5000, Render에서 자동 할당된 포트 사용 가능
     app.run(host="0.0.0.0", port=port, debug=True)
+
