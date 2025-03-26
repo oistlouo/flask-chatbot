@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT 챗봇</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f8f8f8; }
+        .container { max-width: 500px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        .chat-box { text-align: left; max-height: 300px; overflow-y: auto; margin-bottom: 10px; }
+        .chat { padding: 8px; border-radius: 5px; margin: 5px 0; }
+        .user { background: #d1e7dd; text-align: right; }
+        .bot { background: #f8d7da; text-align: left; }
+        input[type="text"] { width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 8px 12px; border: none; background: #007bff; color: white; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GPT 챗봇</h1>
+        <div class="chat-box">
+            {% for chat in chat_history %}
+                <div class="chat user"><strong>당신:</strong> {{ chat[0] }}</div>
+                <div class="chat bot"><strong>GPT:</strong> {{ chat[1] }}</div>
+            {% endfor %}
+        </div>
+        <form method="POST">
+            <input type="text" name="user_input" placeholder="GPT에게 질문하세요">
+            <button type="submit">전송</button>
+        </form>
+    </div>
+</body>
+</html>
